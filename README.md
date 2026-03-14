@@ -11,6 +11,8 @@ This project focuses on classifying images of cats and dogs using Support Vector
  ├── results/            # Results and outputs of the classification
  └── README.md           # Project documentation
 ```
+## dataset used
+### Link: https://www.kaggle.com/datasets/sarimr/dogs-vs-cats-dataset
 
 ## Feature Extraction Methods
 1. **Histogram of Oriented Gradients (HOG):**   HOG is used to describe the structure or shape of objects in images by counting occurrences of gradient orientation in localized portions of the image. 
