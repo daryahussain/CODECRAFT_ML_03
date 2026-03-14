@@ -1,40 +1,41 @@
-# SVM Cats vs Dogs Classifier
+# SVM Cats vs Dogs Image Classification Project
 
 ## Project Overview
-This project implements a Support Vector Machine (SVM) classifier to distinguish between images of cats and dogs. Utilizing machine learning at its core, this model aims to provide a robust solution for image classification tasks within the pet domain.
+This project focuses on classifying images of cats and dogs using Support Vector Machine (SVM) techniques. The model is trained on a dataset of labeled images, where the goal is to differentiate between cat and dog images.
 
-## Features
-- **Image Preprocessing**: Automated preprocessing pipeline for images to enhance classifier performance.
-- **SVM Model**: Implementation of the SVM algorithm with hyperparameter tuning for optimal results.
-- **Model Evaluation**: Comprehensive evaluation reports including accuracy, precision, recall, and confusion matrices.
-- **User-Friendly Interface**: A straightforward command line interface for model interaction and evaluation.
+## Project Structure
+```
+ ├── data/               # Contains the dataset
+ ├── src/                # Source code for feature extraction and model training
+ ├── models/             # Saved model files
+ ├── results/            # Results and outputs of the classification
+ └── README.md           # Project documentation
+```
 
-## Dependencies
-- Python 3.x
-- NumPy
-- Pandas
-- Scikit-Learn
-- OpenCV
-- Matplotlib
-- TensorFlow (if applicable)
+## Feature Extraction Methods
+1. **Histogram of Oriented Gradients (HOG):**   HOG is used to describe the structure or shape of objects in images by counting occurrences of gradient orientation in localized portions of the image. 
 
-## Usage Instructions
-1. Clone the repository:  
-   `git clone https://github.com/daryahussain/CODECRAFT_ML_03.git`
-2. Navigate to the project directory:  
-   `cd CODECRAFT_ML_03`
-3. Install the required dependencies:  
-   `pip install -r requirements.txt`
-4. Prepare your dataset and place it in the appropriate directory.
-5. To train the model, run:  
-   `python train.py`
-6. To test the model, use:  
-   `python test.py`
+2. **Color Histograms:**  This method gathers the distribution of colors present in each image, providing an additional feature set that aids in distinguishing between classes based on color. 
 
-## Model Details
-The model is built using the Scikit-Learn library, leveraging the SVM algorithm. Key parameters include:
-- **Kernel Type**: RBF
-- **C**: Regularization parameter
-- **Gamma**: Kernel coefficient
+## PCA Dimensionality Reduction
+To reduce the dimensionality of the feature set and improve model efficiency, Principal Component Analysis (PCA) is employed. PCA helps in capturing the principal components that contribute the most variance to the dataset, thus simplifying the data while retaining essential structural information.
 
-The trained model can also be saved and loaded for future use, optimizing the workflow of image classification tasks.
+## Dataset Information
+The dataset consists of labeled images containing cats and dogs, usually sourced from platforms such as Kaggle. Each image should be pre-processed to ensure uniformity in size and quality before being fed into the model.
+
+## Model Configuration
+The SVM model is configured with a radial basis function (RBF) kernel. Hyperparameters are tuned using grid search or cross-validation to achieve optimal performance.
+
+## Training Methodology
+The model is trained on the extracted features from the training split of the dataset. An evaluation set is used to fine-tune the parameters and assess accuracy to prevent overfitting.
+
+## Evaluation Metrics
+The model performance is evaluated using the following metrics:
+- Accuracy: The ratio of correctly predicted instances to the total instances.
+- Precision: The ratio of correctly predicted positive observations to the total predicted positives.
+- Recall: The ratio of correctly predicted positive observations to all actual positives.
+- F1 Score: The weighted average of Precision and Recall.
+
+This comprehensive evaluation provides insights into how well the model is performing and where it might need improvements.
+
+---
